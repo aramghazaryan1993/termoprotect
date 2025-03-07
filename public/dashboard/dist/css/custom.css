@@ -1,0 +1,115 @@
+.cw-5{
+    width: 5%!important;
+}
+.cw-10{
+    width: 10% !important;
+}
+.todo-input{
+    display:flex;
+    width:100%;
+    margin-bottom:20px;
+}
+.todo-input input{
+    width: 100%;
+    padding: 5px 5px;
+    height: 30px;
+    border: 1px solid #c5c5c5;
+    font-size: 18px;
+}
+.todo-input input:focus{
+    outline:unset;
+}
+.list-row textarea:focus{
+    outline:unset;
+}
+.list-row textarea{
+    width:100%;
+    background:transparent;
+    border:none;
+    color:green;
+    font-size:17px;
+}
+.list-row textarea:focus{
+    outline:unset;
+}
+.todo-input button{
+    padding: 5px 30px;
+    background: #c5c5c5;
+    color: white;
+    border: 1px solid #c5c5c5;
+    cursor: pointer;
+    transition:.5s;
+    font-size:18px;
+}
+.todo-input button:hover{
+    background:#b5b3b3;
+}
+.todo-input button:focus{
+    outline:unset;
+}
+.line-through{
+    text-decoration:line-through;
+}
+.right{
+    float:left
+}
+.edit-todo,.update-todo,.remove-todo{
+    padding: 0px 5px;
+    cursor:pointer;
+}
+.remove-todo{
+    color: red;
+}
+.list-num{
+    font-weight:bold;
+    padding-right:5px;
+}
+.card-body .todo-list{
+    list-style-type: none;
+    padding-left: 0px;
+    background: #f9f9f9;
+}
+.card-body .list-error,.error{
+    color:red;
+}
+.card-body .todo-list .list-row{
+    padding:5px 10px;
+    position:relative;
+    word-break: break-all;
+    display:flex;
+    font-size:18px;
+    transition:.1s;
+    cursor:pointer;
+}
+.card-body .list-row .list-data,.card-body .list-row .update-data{
+    width:100%!important;
+    text-align:justify!important;
+}
+.card-body .todo-list .list-row:nth-child(even){
+    background:#e4e4e4!important;
+}
+.todo-list .edit-todo,.remove-todo,.update-todo{
+    visibility:hidden!important;
+}
+.card-body .todo-list .list-row:hover{
+    background:#d8d8d8!important;
+}
+.card-body .todo-list .list-row:hover .edit-todo{
+    visibility:visible!important;
+}
+.card-body .todo-list .list-row:hover .remove-todo{
+    visibility:visible!important;
+}
+.card-body .todo-list .list-row:hover .update-todo{
+    visibility:visible!important;
+}
+
+.edit_b{
+    padding: 2px 3px 2px 5px !important;
+    height: 25px !important;
+}
+
+.delete_b{
+    padding: 0px 5px !important;
+    height: 24px !important;
+}
