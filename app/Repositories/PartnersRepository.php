@@ -44,7 +44,7 @@ class PartnersRepository
             $partner->clearMediaCollection('partners_banner');
             // Ավելացնում ենք նոր `img_baner` նկարը
             $partner->addMedia($data['img_baner'])
-                ->clearMediaCollection('partners_banner')
+               // ->clearMediaCollection('partners_banner')
                 ->withCustomProperties(['banner' => true])
                 ->usingFileName(Str::random(10).'.'.$data['img_baner']->getClientOriginalExtension())
                 ->toMediaCollection('partners_banner');

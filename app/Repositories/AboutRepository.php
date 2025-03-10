@@ -16,7 +16,7 @@ class AboutRepository
             $updateAbout->clearMediaCollection('about_banner');
             // Ավելացնում ենք նոր `img_baner` նկարը
             $updateAbout->addMedia($data['img_baner'])
-                ->clearMediaCollection('about_banner')
+                // ->clearMediaCollection('about_banner')
                 ->withCustomProperties(['banner' => true])
                 ->usingFileName(Str::random(10).'.'.$data['img_baner']->getClientOriginalExtension())
                 ->toMediaCollection('about_banner');

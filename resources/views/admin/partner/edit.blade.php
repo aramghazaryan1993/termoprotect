@@ -34,7 +34,7 @@
             </ul>
 
             <div class="card-body">
-
+        
                 <div class="d-flex" style="align-items: center">
                     <label class="mr-2" for="fileInputBaner">Image Banner</label>
                     <input type="file" name="img_baner" class="form-control" id="fileInputBaner" accept="image/*">
@@ -44,22 +44,28 @@
                 <div class="image-container">
                     <img id="imagePreview" src="#" alt="Image Preview">
                     <div class="loading-overlay" id="loadingOverlay">Loading...</div>
-                    @php
-                        $media = $partner->getFirstMedia('partners_banner'); // Ստանում ենք մեդիա օբյեկտը
-
-                        $path = $media->getPath(); // Ստանում ենք ֆայլի ամբողջ ճանապարհը
-
-                        $extension = pathinfo($path, PATHINFO_EXTENSION); // Ստանում ենք ընդարձակումը
-
-                        if ($extension === 'gif') {
-                           $imgUrl = $partner->getFirstMediaUrl('partners_banner');
-                        } else {
-                            $imgUrl = $partner->getFirstMediaUrl('partners_banner','mobile');
-                        }
-                    @endphp
+                    
+             
+                   @if(!empty($partner->getFirstMedia('partners_banner')))
+                        @php
+                       
+                            $media = $partner->getFirstMedia('partners_banner'); // Ստանում ենք մեդիա օբյեկտը
+    
+                            $path = $media->getPath(); // Ստանում ենք ֆայլի ամբողջ ճանապարհը
+    
+                            $extension = pathinfo($path, PATHINFO_EXTENSION); // Ստանում ենք ընդարձակումը
+    
+                            if ($extension === 'gif') {
+                               $imgUrl = $partner->getFirstMediaUrl('partners_banner');
+                            } else {
+                                $imgUrl = $partner->getFirstMediaUrl('partners_banner','mobile');
+                            }
+                         
+                        @endphp
+                   
                     <img id="imageB" src="{{ $imgUrl }}" alt="" style="width: 100px">
                 </div>
-
+ @endif
                 <div class="form-group">
                     <div class="error"></div>
 

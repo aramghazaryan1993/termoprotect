@@ -1,3 +1,4 @@
+
 @php
     if(!empty(Request::segment(2))  && Request::segment(2) == 'about')
     {
@@ -35,7 +36,7 @@
     </div><!-- Banner text end -->
 </div><!-- Banner area end -->
 @php    
-/*
+
 }
 
 
@@ -52,7 +53,7 @@ elseif(!empty(Request::segment(2))  && Request::segment(2) == 'partners'){
           } else {
               $imgUrlBaner = $getPartnerBaner->getFirstMediaUrl('partners_banner','web');
           }
-          */
+         
  @endphp
 
 <div id="banner-area" class="banner-area" style="background-image:url({{  $imgUrlBaner }})">
@@ -78,6 +79,7 @@ elseif(!empty(Request::segment(2))  && Request::segment(2) == 'partners'){
 @php }
 
 elseif(!empty(Request::segment(2))  && Request::segment(2) == 'lawyer'){
+
       $media = $getLawyer->getFirstMedia('lawyer_banner'); // Ստանում ենք մեդիա օբյեկտը
 
           $path = $media->getPath(); // Ստանում ենք ֆայլի ամբողջ ճանապարհը
@@ -89,6 +91,7 @@ elseif(!empty(Request::segment(2))  && Request::segment(2) == 'lawyer'){
           } else {
               $imgUrlBaner = $getLawyer->getFirstMediaUrl('lawyer_banner','web');
           }
+          
  @endphp
 
 <div id="banner-area" class="banner-area" style="background-image:url({{  $imgUrlBaner }})">

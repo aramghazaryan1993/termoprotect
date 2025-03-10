@@ -14,7 +14,7 @@
 
 
     <!-- Banner -->
-{{--    @include('include.banner')--}}
+   @include('include.banner')
     <!-- Banner End -->
 
 
