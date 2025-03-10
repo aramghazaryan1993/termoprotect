@@ -34,7 +34,9 @@
         </div><!-- Container end -->
     </div><!-- Banner text end -->
 </div><!-- Banner area end -->
-@php     }
+@php    
+/*
+}
 
 
 
@@ -50,6 +52,7 @@ elseif(!empty(Request::segment(2))  && Request::segment(2) == 'partners'){
           } else {
               $imgUrlBaner = $getPartnerBaner->getFirstMediaUrl('partners_banner','web');
           }
+          */
  @endphp
 
 <div id="banner-area" class="banner-area" style="background-image:url({{  $imgUrlBaner }})">

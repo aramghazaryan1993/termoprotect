@@ -42,20 +42,22 @@
                         <div class="image-container">
                             <img id="imagePreview" src="#" alt="Image Preview">
                             <div class="loading-overlay" id="loadingOverlay">Loading...</div>
-                            @php
-                                $media = $about->getFirstMedia('about_banner'); // Ստանում ենք մեդիա օբյեկտը
-
-                                $path = $media->getPath(); // Ստանում ենք ֆայլի ամբողջ ճանապարհը
-
-                                $extension = pathinfo($path, PATHINFO_EXTENSION); // Ստանում ենք ընդարձակումը
-
-                                if ($extension === 'gif') {
-                                   $imgUrl = $about->getFirstMediaUrl('about_banner');
-                                } else {
-                                    $imgUrl = $about->getFirstMediaUrl('about_banner','mobile');
-                                }
-                            @endphp
+                            @if(!empty($about->getFirstMedia('about_banner')))
+                                @php
+                                    $media = $about->getFirstMedia('about_banner'); // Ստանում ենք մեդիա օբյեկտը
+    
+                                    $path = $media->getPath(); // Ստանում ենք ֆայլի ամբողջ ճանապարհը
+    
+                                    $extension = pathinfo($path, PATHINFO_EXTENSION); // Ստանում ենք ընդարձակումը
+    
+                                    if ($extension === 'gif') {
+                                       $imgUrl = $about->getFirstMediaUrl('about_banner');
+                                    } else {
+                                        $imgUrl = $about->getFirstMediaUrl('about_banner','mobile');
+                                    }
+                                @endphp
                             <img id="imageB" src="{{ $imgUrl }}" alt="" style="width: 100px">
+                            @endif
                         </div>
 
 

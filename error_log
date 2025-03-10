@@ -1,0 +1,1 @@
+[07-Mar-2025 14:33:54 UTC] PHP Fatal error:  Cannot use Illuminate\Database\Seeder as Seeder because the name is already in use in /home2/termoprotect/public_html/database/seeders/LawyerSeeder.php on line 10

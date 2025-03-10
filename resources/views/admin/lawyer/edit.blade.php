@@ -10,212 +10,8 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<style>
-    /*.image-preview {*/
-    /*    position: relative;*/
-    /*    display: inline-block;*/
-    /*    margin: 10px;*/
-    /*    text-align: center;*/
-    /*}*/
-    /*.image-preview img {*/
-    /*    width: 100px;*/
-    /*    height: auto;*/
-    /*    border-radius: 5px;*/
-    /*}*/
-    /*.progress {*/
-    /*    width: 100%;*/
-    /*    height: 5px;*/
-    /*    background-color: #e0e0e0;*/
-    /*    margin-top: 5px;*/
-    /*}*/
-    /*.progress-bar {*/
-    /*    height: 5px;*/
-    /*    width: 0%;*/
-    /*    background-color: #28a745;*/
-    /*    transition: width 0.3s;*/
-    /*}*/
-    /*.remove-btn {*/
-    /*    position: absolute;*/
-    /*    top: 5px;*/
-    /*    right: 5px;*/
-    /*    background-color: red;*/
-    /*    color: white;*/
-    /*    border: none;*/
-    /*    cursor: pointer;*/
-    /*    font-size: 12px;*/
-    /*    padding: 2px 5px;*/
-    /*    border-radius: 5px;*/
-    /*    display: none;*/
-    /*}*/
-    /*.image-preview:hover .remove-btn {*/
-    /*    display: block;*/
-    /*}*/
-
-    /*!*Baner*!*/
-    /*!* Loading progress bar styles *!*/
-    /*#loadingContainer {*/
-    /*    margin-top: 10px;*/
-    /*    width: 100%;*/
-    /*    background-color: #f0f0f0;*/
-    /*    border-radius: 5px;*/
-    /*    overflow: hidden;*/
-    /*    display: none; !* Hidden by default *!*/
-    /*}*/
-
-    /*#loadingProgress {*/
-    /*    width: 0%;*/
-    /*    height: 20px;*/
-    /*    background-color: #007bff; !* Blue color *!*/
-    /*    text-align: center;*/
-    /*    line-height: 20px;*/
-    /*    color: white;*/
-    /*    border-radius: 5px;*/
-    /*    transition: width 0.1s ease; !* Faster transition *!*/
-    /*}*/
-
-    /*!* Image preview styles *!*/
-    /*#imagePreview {*/
-    /*    margin-top: 20px;*/
-    /*    max-width: 100%;*/
-    /*    height: auto;*/
-    /*    border-radius: 5px;*/
-    /*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
-    /*    display: none; !* Hidden by default *!*/
-    /*}*/
-    /*#imageB {*/
-    /*    margin-top: 20px;*/
-    /*    max-width: 100%;*/
-    /*    height: auto;*/
-    /*    border-radius: 5px;*/
-    /*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
-    /*}*/
 
 
-    /*!* File input hover effect *!*/
-    /*#fileInputBaner:hover {*/
-    /*    cursor: pointer;*/
-    /*    opacity: 0.8;*/
-    /*}*/
-
-    /*!*Baner*!*/
-
-    /*!* Loading overlay styles *!*/
-    /*.loading-overlay {*/
-    /*    position: absolute;*/
-    /*    top: 0;*/
-    /*    left: 0;*/
-    /*    width: 100%;*/
-    /*    height: 100%;*/
-    /*    background-color: rgba(0, 0, 0, 0.5); !* Semi-transparent black *!*/
-    /*    display: flex;*/
-    /*    align-items: center;*/
-    /*    justify-content: center;*/
-    /*    color: white;*/
-    /*    font-size: 20px;*/
-    /*    border-radius: 5px;*/
-    /*    opacity: 0; !* Hidden by default *!*/
-    /*    transition: opacity 0.3s ease;*/
-    /*}*/
-
-    /*!* Image container for positioning *!*/
-    /*.image-container {*/
-    /*    position: relative;*/
-    /*    display: inline-block;*/
-    /*    max-width: 300px; !* Limit container width *!*/
-    /*}*/
-
-    /*!* Image preview styles *!*/
-    /*#imagePreview {*/
-    /*    max-width: 100%;*/
-    /*    height: auto;*/
-    /*    border-radius: 5px;*/
-    /*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
-    /*    display: none; !* Hidden by default *!*/
-    /*}*/
-
-    /*!* Remove icon styles *!*/
-    /*.remove-icon {*/
-    /*    position: absolute;*/
-    /*    top: 20px;*/
-    /*    right: 0;*/
-    /*    background-color: #ff4d4d; !* Red color *!*/
-    /*    color: white;*/
-    /*    border: none;*/
-    /*    border-radius: 50%;*/
-    /*    width: 25px;*/
-    /*    height: 25px;*/
-    /*    cursor: pointer;*/
-    /*    font-size: 18px;*/
-    /*    display: flex;*/
-    /*    align-items: center;*/
-    /*    justify-content: center;*/
-    /*    opacity: 0; !* Hidden by default *!*/
-    /*    transition: opacity 0.3s ease; !* Smooth transition *!*/
-    /*}*/
-
-    /*.remove-icon:hover {*/
-    /*    background-color: #cc0000; !* Darker red on hover *!*/
-    /*}*/
-
-    /*!* Show remove icon on image hover *!*/
-    /*.image-container:hover .remove-icon {*/
-    /*    opacity: 1; !* Show icon *!*/
-    /*}*/
-
-    /*!* Show loading overlay when active *!*/
-    /*.loading-active .loading-overlay {*/
-    /*    opacity: 1; !* Show overlay *!*/
-    /*}*/
-
-    /*!* File input hover effect *!*/
-    /*#fileInputBaner:hover {*/
-    /*    cursor: pointer;*/
-    /*    opacity: 0.8;*/
-    /*}*/
-</style>
-
-{{--Image List--}}
-<style>
-    /*.image-container {*/
-    /*    position: relative;*/
-    /*    display: inline-block;*/
-    /*    margin: 10px;*/
-    /*    text-align: center;*/
-    /*    transition: all 0.3s ease-in-out;*/
-    /*}*/
-    /*.image-container img {*/
-    /*    width: 100px;*/
-    /*    height: auto;*/
-    /*    border-radius: 5px;*/
-    /*    transition: transform 0.3s ease;*/
-    /*}*/
-    /*.image-container:hover img {*/
-    /*    transform: scale(1.1);*/
-    /*    opacity: 0.7;*/
-    /*}*/
-    /*.action-buttons {*/
-    /*    position: absolute;*/
-    /*    top: 50%;*/
-    /*    left: 50%;*/
-    /*    transform: translate(-50%, -50%);*/
-    /*    display: none;*/
-    /*}*/
-    /*.image-container:hover .action-buttons {*/
-    /*    display: block;*/
-    /*}*/
-    /*.btn {*/
-    /*    background-color: rgba(0, 0, 0, 0.7);*/
-    /*    color: white;*/
-    /*    border: none;*/
-    /*    cursor: pointer;*/
-    /*    padding: 5px 8px;*/
-    /*    margin: 3px;*/
-    /*    border-radius: 5px;*/
-    /*}*/
-    /*.btn:hover {*/
-    /*    background-color: rgba(0, 0, 0, 1);*/
-    /*}*/
-</style>
 
 @section('content')
 
@@ -249,20 +45,23 @@
                         <div class="image-container">
                             <img id="imagePreview" src="#" alt="Image Preview">
                             <div class="loading-overlay" id="loadingOverlay">Loading...</div>
-                            @php
-                                $media = $lawyer->getFirstMedia('lawyer_banner'); // Ստանում ենք մեդիա օբյեկտը
-
-                                $path = $media->getPath(); // Ստանում ենք ֆայլի ամբողջ ճանապարհը
-
-                                $extension = pathinfo($path, PATHINFO_EXTENSION); // Ստանում ենք ընդարձակումը
-
-                                if ($extension === 'gif') {
-                                   $imgUrl = $lawyer->getFirstMediaUrl('lawyer_banner');
-                                } else {
-                                    $imgUrl = $lawyer->getFirstMediaUrl('lawyer_banner','mobile');
-                                }
-                            @endphp
-                            <img id="imageB" src="{{ $imgUrl }}" alt="" style="width: 100px">
+                           @if($lawyer && !empty($lawyer->getFirstMedia('lawyer_banner')))
+                                @php
+                                    $media = $lawyer->getFirstMedia('lawyer_banner'); // Ստանում ենք մեդիա օբյեկտը
+    
+                                    $path = $media->getPath(); // Ստանում ենք ֆայլի ամբողջ ճանապարհը
+    
+                                    $extension = pathinfo($path, PATHINFO_EXTENSION); // Ստանում ենք ընդարձակումը
+    
+                                    if ($extension === 'gif') {
+                                       $imgUrl = $lawyer->getFirstMediaUrl('lawyer_banner');
+                                    } else {
+                                        $imgUrl = $lawyer->getFirstMediaUrl('lawyer_banner','mobile');
+                                    }
+                                @endphp
+                          
+                                <img id="imageB" src="{{ $imgUrl }}" alt="" style="width: 100px">
+                             @endif
                         </div>
 
 
@@ -271,27 +70,30 @@
                         <div class="d-flex" style="align-items: center">
                             <label class="mr-2" for="exampleInputPassword1">Image</label>
                             <input  type="file" name="img[]" class="form-control"  id="fileInput" multiple>
-                            <input type="hidden" name="delete_img" value="storage/{{$lawyer->img}}">
+                            <input type="hidden" name="delete_img" value="storage/{{-- $lawyer->img --}}">
                         </div><br>
 
                         <!-- Preview and Progress Container -->
                         <div id="previewContainer"></div>
                         <div id="uploadedImages">
-                            @foreach($lawyer->getMedia('lawyer')->unique('id') as $image)
-                                <div class="image-container" id="img-{{ $image->id }}">
-                                    <img src="{{ $image->getUrl('mobile') }}" alt="About Image">
-                                    <div class="action-buttons">
-                                        <button class="btn delete-btn" data-id="{{ $image->id }}">❌</button>
-{{--                                        <button class="btn set-main-btn" data-id="{{ $image->id }}">⭐</button>--}}
+                            @if( $lawyer && !empty($lawyer->getMedia('lawyer')))
+                                @foreach($lawyer->getMedia('lawyer')->unique('id') as $image)
+                                    <div class="image-container" id="img-{{ $image->id }}">
+                                        <img src="{{ $image->getUrl('mobile') }}" alt="About Image">
+                                        <div class="action-buttons">
+                                            <button class="btn delete-btn" data-id="{{ $image->id }}">❌</button>
+    {{--                                        <button class="btn set-main-btn" data-id="{{ $image->id }}">⭐</button>--}}
+                                        </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            @endif
                         </div>
 
 
                     @foreach(\App\Models\Lawyer::lang as $val)
                             <div id="{{$val['value']}}" class="tab-pane @if($val['value'] == 'hy') active @endif form-group"><br>
                                 <div class="row">
+                                    @if(!empty($lawyer))
                                     @foreach($lawyer->localizations as $chunk)
                                         @if($chunk->lang == $val['value'] && !empty($chunk->title))
                                             <div class="col-lg-3">
@@ -335,7 +137,9 @@
                                             </div>
                                         @endif
                                     @endforeach
+                                   
                                     <input type="hidden" name="id" value="{{$lawyer->id}}">
+                                     @endif
                                 </div>
                             </div>
                         @endforeach
@@ -491,44 +295,4 @@
 
     </script>
 
-    <script>
-        // const fileInput = document.getElementById('fileInputBaner');
-        // const imagePreview = document.getElementById('imagePreview');
-        // const loadingOverlay = document.getElementById('loadingOverlay');
-        // const imageContainer = document.querySelector('.image-container');
-        //
-        // fileInput.addEventListener('change', function(event) {
-        //     const file = event.target.files[0];
-        //     if (file) {
-        //         // Show loading overlay
-        //         imageContainer.classList.add('loading-active');
-        //
-        //         // Simulate file upload progress
-        //         let progress = 0;
-        //         const interval = setInterval(() => {
-        //             progress += 20; // Increase progress by 20% each step
-        //             loadingOverlay.textContent = `Loading ${progress}%`;
-        //
-        //             if (progress >= 100) {
-        //                 clearInterval(interval); // Stop the interval
-        //                 imageContainer.classList.remove('loading-active'); // Hide loading overlay
-        //
-        //                 // Display the image
-        //                 const reader = new FileReader();
-        //                 reader.onload = function(e) {
-        //                     imagePreview.src = e.target.result;
-        //                     imagePreview.style.display = 'block';
-        //                 };
-        //                 reader.readAsDataURL(file); // Read the file as a data URL
-        //             }
-        //         }, 100); // Update progress every 100ms
-        //     }
-        // });
-        //
-        // // Submit button functionality (without reloading the page)
-        // document.getElementById('submitBtn').addEventListener('click', function(event) {
-        //     event.preventDefault(); // Prevent form submission or page reload
-        //     alert('Submit button clicked!'); // Replace with your custom logic
-        // });
-    </script>
 @endsection

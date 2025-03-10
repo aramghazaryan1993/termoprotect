@@ -4,6 +4,7 @@
 /public/hot
 /public/storage
 /public/error_log
+/bootstrap/cache
 /storage/*.key
 /vendor
 .env

@@ -145,7 +145,7 @@
                                                    value="{{ old('langs.' . $val['value'] . '.position') }}">
                                         </div>
 
-                                        <div class="col-lg-20" style="align-items: center; width: 500px;">
+                                        <div class="col-lg-20" style="align-items: center; width: 500px; display:none">
                                             <label for=""></label>
                                             <textarea name="langs[{{$val['value']}}][text]" rows="5" style="width: 120%"
                                                       placeholder="Enter Text "

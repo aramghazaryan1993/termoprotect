@@ -22,12 +22,13 @@ class LawyerController extends Controller
     public function index()
     {
         $lawyer = Lawyer::with('localizations')->first();
-        // if(isset($lawyer->getMedia('lawyer')))
-        // {
+        if($lawyer && !empty($lawyer->getMedia('lawyer')))
+        {
          $images = $lawyer->getMedia('lawyer');
-        // }else{
-           // $images = array();
-        // }
+        }else{
+        
+            $images = array();
+        }
        
         return view('admin.lawyer.edit',compact('lawyer','images'));
     }
