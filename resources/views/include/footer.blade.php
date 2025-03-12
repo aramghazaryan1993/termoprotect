@@ -1,3 +1,6 @@
+    <a href="https://api.whatsapp.com/send?phone={{$defaultData->whatsapp}}" id="whatsapp-button" target="_blank" style="display: block;">
+                    <img src="{{ asset('image/WhatsApp-iconn.png') }}" alt="WhatsApp">
+                   </a>
 @php
     $data = $defaultData->localizations->firstWhere('lang', app()->getLocale());
   $dataAbout = $about->localizations->firstWhere('lang', app()->getLocale());
@@ -9,8 +12,8 @@
                 <div class="col-lg-4 col-md-6 footer-widget footer-about">
                     <h3 class="widget-title">{{__('about')}}</h3>
                     <img loading="lazy" width="200px" class="footer-logo" src="images/footer-logo.png" alt="Constra">
-
-                    <p>{{ Str::limit($dataAbout->text, 170, '') }}</p>
+@php $aboutC = Str::limit($dataAbout->text, 300, ''); @endphp
+                    <p>{!! html_entity_decode($aboutC) !!}</p>
 
                 </div><!-- Col end -->
 
@@ -52,7 +55,10 @@
 
                     </div>
                 </div>
+               
             </div><!-- Row end -->
+            
+         
 
             <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
                 <button class="btn btn-primary" title="Back to Top">

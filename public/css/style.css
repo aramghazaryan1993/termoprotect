@@ -3429,4 +3429,24 @@ iframe{
 
 }
 
+#whatsapp-button {
+    right: 9px !important;
+}
+
+}
+
+#whatsapp-button {
+    position: fixed;
+    bottom: 67px;
+    right: 36px;
+    z-index: 100;
+    width: 45px;
+   
+    border-radius: 50%;
+    box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
+  animation: anim 1.5s infinite;
+   
+}
+#whatsapp-button img{
+    width: 45px; 
 }
